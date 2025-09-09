@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, XCircle, Zap } from "lucide-react";
+import { CheckCircle2, XCircle, Zap, X, Sparkles } from "lucide-react";
 
 const Problems = () => {
   const problems = [
@@ -62,6 +63,67 @@ const Problems = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Demonstração Visual do Problema - Inspirado no Peachup */}
+        <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-3xl p-8 lg:p-12 border border-red-100 mb-16">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl lg:text-4xl font-bold text-peacock-dark mb-4">
+              Reconhece alguns desses problemas? 😔
+            </h3>
+            <p className="text-lg text-peacock-dark/70 max-w-3xl mx-auto">
+              Milhares de brasileiras sofrem diariamente com esses problemas nos cílios. 
+              Mas existe uma solução <strong>aprovada pela ANVISA</strong> que pode mudar tudo!
+            </p>
+          </div>
+
+          {/* Grid de Problemas Visuais */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <div className="bg-white rounded-2xl p-6 text-center shadow-md">
+              <div className="aspect-square bg-red-100 rounded-xl mb-4 flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/lovable-uploads/e1210165-0ccf-49c3-a305-86f78b2ba7dc.png" 
+                  alt="Cílios ralos antes do tratamento" 
+                  className="w-full h-full object-cover opacity-60"
+                />
+              </div>
+              <h4 className="font-bold text-red-600 mb-2">Cílios Ralos</h4>
+              <p className="text-red-600/80 text-sm">Poucos fios, sem volume nem definição</p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 text-center shadow-md">
+              <div className="aspect-square bg-red-100 rounded-xl mb-4 flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/lovable-uploads/1ef8b9ca-2381-44b3-b8c0-f3d089743bac.png" 
+                  alt="Cílios curtos antes do tratamento" 
+                  className="w-full h-full object-cover opacity-60"
+                />
+              </div>
+              <h4 className="font-bold text-red-600 mb-2">Cílios Curtos</h4>
+              <p className="text-red-600/80 text-sm">Comprimento insuficiente para um olhar marcante</p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 text-center shadow-md md:col-span-2 lg:col-span-1">
+              <div className="aspect-square bg-red-100 rounded-xl mb-4 flex items-center justify-center">
+                <X className="w-16 h-16 text-red-400" />
+              </div>
+              <h4 className="font-bold text-red-600 mb-2">Sem Curvatura</h4>
+              <p className="text-red-600/80 text-sm">Cílios retos que não valorizam o olhar</p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <p className="text-lg text-red-600 font-semibold mb-4">
+              🚨 Esses problemas afetam sua autoestima diariamente?
+            </p>
+            <p className="text-peacock-dark/70 mb-6">
+              Não precisa mais sofrer! Temos a solução perfeita com <strong>resultados comprovados</strong>.
+            </p>
+            <Button variant="cta" size="lg" className="px-8">
+              <Sparkles className="w-5 h-5 mr-2" />
+              VER A SOLUÇÃO AGORA!
+            </Button>
+          </div>
         </div>
 
         {/* Solution Section */}

@@ -152,17 +152,25 @@ const Hero = () => {
                 </Badge>
               </div>
 
-              {/* Before/After */}
+              {/* Before/After com imagem real */}
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-br from-peacock-rose/20 to-peacock-pink/20 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-500"></div>
                 <img 
-                  src={beforeAfterImage} 
-                  alt="Antes e Depois - Resultados Peacock Cosmetics"
+                  src="/lovable-uploads/5c4f588d-fcfe-4934-82c8-fc6a5e0f5733.png" 
+                  alt="Antes e Depois - Resultados Reais Peacock Cosmetics"
                   className="relative z-10 w-full rounded-2xl shadow-xl group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute bottom-4 left-4 right-4 z-20 bg-white/90 backdrop-blur-sm rounded-xl p-3">
-                  <p className="text-sm font-semibold text-peacock-dark text-center">
-                    ✨ Resultados reais em 4-6 semanas
+                <div className="absolute top-4 left-4 z-20">
+                  <Badge className="bg-green-600 text-white font-bold px-3 py-1 shadow-lg">
+                    ANTES ↔ DEPOIS
+                  </Badge>
+                </div>
+                <div className="absolute bottom-4 left-4 right-4 z-20 bg-white/95 backdrop-blur-sm rounded-xl p-3">
+                  <p className="text-sm font-bold text-peacock-dark text-center">
+                    ⚡ +300% mais volume em 4 semanas
+                  </p>
+                  <p className="text-xs text-peacock-dark/70 text-center">
+                    Cliente real - Aprovado ANVISA
                   </p>
                 </div>
               </div>
