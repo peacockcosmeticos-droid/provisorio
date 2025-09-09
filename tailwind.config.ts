@@ -22,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -47,6 +48,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Peacock Brand Colors
+        "peacock-pink": "hsl(var(--peacock-pink))",
+        "peacock-rose": "hsl(var(--peacock-rose))",
+        "peacock-coral": "hsl(var(--peacock-coral))",
+        "peacock-cream": "hsl(var(--peacock-cream))",
+        "peacock-dark": "hsl(var(--peacock-dark))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
