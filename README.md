@@ -1,73 +1,105 @@
-# Welcome to your Lovable project
+# Peacock Cosmetics - Landing Page
 
-## Project info
+## Sobre o Projeto
 
-**URL**: https://lovable.dev/projects/e26411b1-9483-46e5-bb7b-daaeba95205e
+Landing page para Peacock Cosmetics, focada na venda do Peacock Lash Serum - um produto para crescimento de cílios com resultados visíveis em 4-6 semanas.
 
-## How can I edit this code?
+## Tecnologias Utilizadas
 
-There are several ways of editing your application.
+Este projeto foi desenvolvido com as seguintes tecnologias:
 
-**Use Lovable**
+- **Vite** - Build tool e dev server
+- **TypeScript** - Tipagem estática
+- **React** - Biblioteca para interface
+- **shadcn/ui** - Componentes de UI
+- **Tailwind CSS** - Framework de CSS
+- **React Router** - Roteamento
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e26411b1-9483-46e5-bb7b-daaeba95205e) and start prompting.
+## Instalação e Desenvolvimento
 
-Changes made via Lovable will be committed automatically to this repo.
+### Pré-requisitos
 
-**Use your preferred IDE**
+- Node.js (versão 16 ou superior)
+- npm ou yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Passos para executar localmente
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone este repositório
+git clone <url-do-repositorio>
+cd peacock-cosmetics
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Instale as dependências
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+O projeto estará disponível em `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Scripts Disponíveis
 
-**Use GitHub Codespaces**
+```sh
+# Desenvolvimento
+npm run dev
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Build para produção
+npm run build
 
-## What technologies are used for this project?
+# Preview do build
+npm run preview
 
-This project is built with:
+# Linting
+npm run lint
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Estrutura do Projeto
 
-## How can I deploy this project?
+```
+src/
+├── components/          # Componentes React
+│   ├── ui/             # Componentes de UI (shadcn)
+│   ├── Hero.tsx        # Seção principal
+│   ├── Problems.tsx    # Problemas que o produto resolve
+│   ├── Benefits.tsx    # Benefícios do produto
+│   ├── Testimonials.tsx # Depoimentos
+│   ├── Pricing.tsx     # Preços e ofertas
+│   └── Footer.tsx      # Rodapé
+├── pages/              # Páginas da aplicação
+├── lib/                # Utilitários e configurações
+└── assets/             # Imagens e recursos estáticos
+```
 
-Simply open [Lovable](https://lovable.dev/projects/e26411b1-9483-46e5-bb7b-daaeba95205e) and click on Share -> Publish.
+## Funcionalidades
 
-## Can I connect a custom domain to my Lovable project?
+- **Design Responsivo** - Otimizado para desktop e mobile
+- **Performance** - Carregamento rápido com Vite
+- **SEO Otimizado** - Meta tags configuradas para compartilhamento social
+- **Componentes Reutilizáveis** - Arquitetura modular com shadcn/ui
+- **Tipagem TypeScript** - Código mais seguro e manutenível
 
-Yes, you can!
+## Deploy
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Para fazer o deploy do projeto:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+1. Execute o build de produção:
+```sh
+npm run build
+```
+
+2. Os arquivos otimizados estarão na pasta `dist/`
+
+3. Faça upload dos arquivos para seu servidor web ou plataforma de hospedagem
+
+## Contribuição
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
+4. Push para a branch (`git push origin feature/nova-feature`)
+5. Abra um Pull Request
+
+## Licença
+
+Este projeto é privado e pertence à Peacock Cosmetics.

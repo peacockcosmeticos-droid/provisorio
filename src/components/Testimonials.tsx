@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Star, Quote, Heart, Sparkles } from "lucide-react";
+import { scrollToPricing } from "@/lib/scroll";
 
 const Testimonials = () => {
   const testimonials = [
@@ -19,7 +20,7 @@ const Testimonials = () => {
       location: "Rio de Janeiro - RJ",
       rating: 5,
       text: "Depois de anos usando extensões que danificavam meus cílios, encontrei o Peacock. Agora tenho cílios naturais lindos e saudáveis!",
-      result: "Como aplicar",
+      result: "Recuperou os fios após extensões",
       avatar: "M",
       verified: true
     },
@@ -37,7 +38,7 @@ const Testimonials = () => {
       location: "Brasília - DF",
       rating: 5,
       text: "Estava cética no início, mas os resultados me surpreenderam. Em 6 semanas meus cílios estavam irreconhecíveis. Produto excelente!",
-      result: "Dermato aplicar",
+      result: "Resultados em 6 semanas",
       avatar: "C",
       verified: true
     },
@@ -46,7 +47,7 @@ const Testimonials = () => {
       location: "Porto Alegre - RS",
       rating: 5,
       text: "Finalmente um produto que funciona de verdade! Meus cílios estão longos, volumosos e super saudáveis. Não largo mais!",
-      result: "UGC 1",
+      result: "rotina e progresso",
       avatar: "L",
       verified: true
     },
@@ -55,7 +56,7 @@ const Testimonials = () => {
       location: "Fortaleza - CE",
       rating: 5,
       text: "O melhor investimento que fiz para minha beleza! Em apenas 4 semanas já estava recebendo elogios. Produto sensacional!",
-      result: "UGC 2",
+      result: "Elogios em 4 semanas",
       avatar: "R",
       verified: true
     }
@@ -69,7 +70,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section id="testimonials-section" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
@@ -186,7 +187,7 @@ const Testimonials = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="cta" size="xl" className="px-12">
+            <Button variant="cta" size="xl" className="px-12" onClick={scrollToPricing}>
               <Heart className="w-5 h-5 mr-2" />
               QUERO MINHA TRANSFORMAÇÃO AGORA!
             </Button>

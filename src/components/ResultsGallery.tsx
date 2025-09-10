@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Shield, Award, Heart, Sparkles } from "lucide-react";
+import { scrollToPricing } from "@/lib/scroll";
 
 const ResultsGallery = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -10,7 +11,7 @@ const ResultsGallery = () => {
   // Imagens de antes/depois com dados estratégicos para conversão
   const beforeAfterImages = [
     {
-      src: "/lovable-uploads/5c4f588d-fcfe-4934-82c8-fc6a5e0f5733.png",
+      src: "/assets/images/5c4f588d-fcfe-4934-82c8-fc6a5e0f5733.png",
       title: "Transformação em 4 Semanas",
       period: "4 semanas de uso",
       description: "Cílios mais longos e volumosos naturalmente",
@@ -18,7 +19,7 @@ const ResultsGallery = () => {
       priority: 1 // Imagem principal - resultado mais dramático
     },
     {
-      src: "/lovable-uploads/a1577366-aced-4e49-bc85-6be8168a85bb.png", 
+      src: "/assets/images/a1577366-aced-4e49-bc85-6be8168a85bb.png",
       title: "Crescimento Visível",
       period: "4 semanas de uso",
       description: "Densidade e comprimento naturais",
@@ -26,7 +27,7 @@ const ResultsGallery = () => {
       priority: 2
     },
     {
-      src: "/lovable-uploads/20d0cd3c-561a-4783-9c9c-fa79667f9ec2.png",
+      src: "/assets/images/20d0cd3c-561a-4783-9c9c-fa79667f9ec2.png",
       title: "Resultado Profissional",
       period: "6 semanas de uso", 
       description: "Cílios dignos de salão de beleza",
@@ -34,7 +35,7 @@ const ResultsGallery = () => {
       priority: 1 // Segunda imagem principal
     },
     {
-      src: "/lovable-uploads/7d34adf7-daa9-4b27-b276-e7de95ce8762.png",
+      src: "/assets/images/7d34adf7-daa9-4b27-b276-e7de95ce8762.png",
       title: "Transformação Lateral",
       period: "5 semanas de uso",
       description: "Crescimento em todos os ângulos",
@@ -42,7 +43,7 @@ const ResultsGallery = () => {
       priority: 3
     },
     {
-      src: "/lovable-uploads/1ab29c0f-f555-4d9e-9065-31bf5c66bb5b.png",
+      src: "/assets/images/1ab29c0f-f555-4d9e-9065-31bf5c66bb5b.png",
       title: "Olhar Mais Expressivo",
       period: "3 semanas de uso",
       description: "Diferença desde as primeiras semanas",
@@ -50,7 +51,7 @@ const ResultsGallery = () => {
       priority: 2
     },
     {
-      src: "/lovable-uploads/e1210165-0ccf-49c3-a305-86f78b2ba7dc.png",
+      src: "/assets/images/e1210165-0ccf-49c3-a305-86f78b2ba7dc.png",
       title: "Cílios Mais Saudáveis",
       period: "4 semanas de uso", 
       description: "Fortalecimento e crescimento",
@@ -73,7 +74,7 @@ const ResultsGallery = () => {
   const currentImage = sortedImages[currentImageIndex];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-peacock-cream to-white">
+    <section id="results" className="py-20 bg-gradient-to-b from-peacock-cream to-white">
       <div className="container mx-auto px-4">
         {/* Header com diferencial ANVISA */}
         <div className="text-center mb-16">
@@ -215,7 +216,7 @@ const ResultsGallery = () => {
             Resultados reais de mulheres brasileiras como você. Com aprovação ANVISA e garantia de satisfação.
           </p>
           
-          <Button variant="cta" size="xl" className="px-12">
+          <Button variant="cta" size="xl" className="px-12" onClick={scrollToPricing}>
             <Sparkles className="w-5 h-5 mr-2" />
             QUERO MEUS CÍLIOS PERFEITOS AGORA!
           </Button>

@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Star, Quote, Verified, TrendingUp, Users, Award } from "lucide-react";
+import { scrollToPricing } from "@/lib/scroll";
 
 const SocialProof = () => {
   // Stats inspirados no padrão Peachup mas adaptados para cílios
@@ -15,7 +16,7 @@ const SocialProof = () => {
   // Casos antes/depois específicos com dados de conversão
   const transformationCases = [
     {
-      beforeImage: "/lovable-uploads/1f8d6e0f-0548-4a57-84ca-22f4e7000ec9.png",
+      beforeImage: "/assets/images/1f8d6e0f-0548-4a57-84ca-22f4e7000ec9.png",
       title: "Cílios Ralos → Volumosos",
       description: "De cílios quase inexistentes para um olhar marcante",
       period: "4 semanas",
@@ -25,7 +26,7 @@ const SocialProof = () => {
       location: "São Paulo - SP"
     },
     {
-      beforeImage: "/lovable-uploads/1ef8b9ca-2381-44b3-b8c0-f3d089743bac.png",
+      beforeImage: "/assets/images/1ef8b9ca-2381-44b3-b8c0-f3d089743bac.png",
       title: "Crescimento Natural",
       description: "Sem extensões, sem truques. Apenas crescimento real",
       period: "5 semanas", 
@@ -37,7 +38,7 @@ const SocialProof = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section id="social-proof" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Header com foco em aprovação ANVISA */}
         <div className="text-center mb-16">
@@ -199,7 +200,7 @@ const SocialProof = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="cta" size="xl" className="px-12 text-lg">
+            <Button variant="cta" size="xl" className="px-12 text-lg" onClick={scrollToPricing}>
               🇧🇷 QUERO O PRODUTO NACIONAL APROVADO!
             </Button>
           </div>

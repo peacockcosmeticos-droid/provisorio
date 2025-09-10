@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Timer, Star, Users, Heart } from "lucide-react";
+import { scrollToPricing } from "@/lib/scroll";
 import beforeAfterImage from "@/assets/before-after-lashes.jpg";
-import heroProductImage from "@/assets/peacock-hero-product.jpg";
+import heroProductImage from "@/assets/111.webp";
 import { useState, useEffect } from "react";
 
 const Hero = () => {
@@ -30,7 +31,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-gradient overflow-hidden">
+    <section id="hero" className="relative min-h-screen bg-gradient overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 bg-peacock-pink rounded-full blur-3xl"></div>
@@ -120,7 +121,7 @@ const Hero = () => {
             </div>
 
             <div className="space-y-4">
-              <Button variant="cta" size="xl" className="w-full">
+              <Button variant="cta" size="xl" className="w-full" onClick={scrollToPricing}>
                 🛒 QUERO CÍLIOS DE DIVA - 50% OFF
               </Button>
               
@@ -156,7 +157,7 @@ const Hero = () => {
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-br from-peacock-rose/20 to-peacock-pink/20 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-500"></div>
                 <img 
-                  src="/lovable-uploads/5c4f588d-fcfe-4934-82c8-fc6a5e0f5733.png" 
+                  src="/assets/images/5c4f588d-fcfe-4934-82c8-fc6a5e0f5733.png"
                   alt="Antes e Depois - Resultados Reais Peacock Cosmetics"
                   className="relative z-10 w-full rounded-2xl shadow-xl group-hover:scale-105 transition-transform duration-500"
                 />

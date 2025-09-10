@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, XCircle, Zap, X, Sparkles } from "lucide-react";
+import { scrollToPricing } from "@/lib/scroll";
 
 const Problems = () => {
   const problems = [
@@ -36,7 +37,7 @@ const Problems = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section id="problems" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Problem Section */}
         <div className="text-center mb-16">
@@ -82,7 +83,7 @@ const Problems = () => {
             <div className="bg-white rounded-2xl p-6 text-center shadow-md">
               <div className="aspect-square bg-red-100 rounded-xl mb-4 flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/lovable-uploads/e1210165-0ccf-49c3-a305-86f78b2ba7dc.png" 
+                  src="/assets/images/e1210165-0ccf-49c3-a305-86f78b2ba7dc.png"
                   alt="Cílios ralos antes do tratamento" 
                   className="w-full h-full object-cover opacity-60"
                 />
@@ -94,7 +95,7 @@ const Problems = () => {
             <div className="bg-white rounded-2xl p-6 text-center shadow-md">
               <div className="aspect-square bg-red-100 rounded-xl mb-4 flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/lovable-uploads/1ef8b9ca-2381-44b3-b8c0-f3d089743bac.png" 
+                  src="/assets/images/1ef8b9ca-2381-44b3-b8c0-f3d089743bac.png"
                   alt="Cílios curtos antes do tratamento" 
                   className="w-full h-full object-cover opacity-60"
                 />
@@ -119,7 +120,7 @@ const Problems = () => {
             <p className="text-peacock-dark/70 mb-6">
               Não precisa mais sofrer! Temos a solução perfeita com <strong>resultados comprovados</strong>.
             </p>
-            <Button variant="cta" size="lg" className="px-8">
+            <Button variant="cta" size="lg" className="px-8" onClick={scrollToPricing}>
               <Sparkles className="w-5 h-5 mr-2" />
               VER A SOLUÇÃO AGORA!
             </Button>
@@ -162,7 +163,7 @@ const Problems = () => {
                 <p className="text-peacock-dark/70 mb-4">
                   para resultados visíveis e duradouros
                 </p>
-                <Button variant="cta" size="lg" className="w-full">
+                <Button variant="cta" size="lg" className="w-full" onClick={scrollToPricing}>
                   QUERO MINHA TRANSFORMAÇÃO
                 </Button>
               </div>
@@ -186,7 +187,7 @@ const Problems = () => {
           <p className="text-lg text-peacock-dark/70 mb-6">
             Não deixe para amanhã a transformação que você pode começar hoje!
           </p>
-          <Button variant="hero" size="xl" className="px-12">
+          <Button variant="hero" size="xl" className="px-12" onClick={scrollToPricing}>
             SIM, EU QUERO CÍLIOS INCRÍVEIS! 💫
           </Button>
           <p className="text-sm text-peacock-dark/60 mt-4">

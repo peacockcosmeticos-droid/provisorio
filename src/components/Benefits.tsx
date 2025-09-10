@@ -2,6 +2,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sparkles, Heart, Shield, Zap, Star, Clock } from "lucide-react";
+import { scrollToPricing } from "@/lib/scroll";
+import { scrollToTestimonials } from "@/lib/scroll";
 
 const Benefits = () => {
   const mainBenefits = [
@@ -35,7 +37,7 @@ const Benefits = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-peacock-cream to-white">
+    <section id="benefits" className="py-20 bg-gradient-to-br from-peacock-cream to-white">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
@@ -129,10 +131,10 @@ const Benefits = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="cta" size="xl" className="px-12">
+            <Button variant="cta" size="xl" className="px-12" onClick={scrollToPricing}>
               QUERO RESULTADO EM 7 DIAS! 🚀
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" onClick={scrollToTestimonials}>
               Ver Mais Depoimentos
             </Button>
           </div>

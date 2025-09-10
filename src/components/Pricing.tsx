@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, Star, Crown, Zap, Shield, Gift } from "lucide-react";
+import { scrollToPricing } from "@/lib/scroll";
 
 const Pricing = () => {
   const packages = [
@@ -9,67 +10,70 @@ const Pricing = () => {
       id: 1,
       name: "Plano Básico",
       subtitle: "Experimente a transformação",
-      originalPrice: "R$ 197,00",
-      price: "R$ 98,50",
+      originalPrice: "R$ 315,18",
+      price: "R$ 126,32",
+      installmentPrice: "13,16",
       discount: "50%",
-      installments: "ou 3x de R$ 32,83",
+      installments: "ou 12x de R$ 13,16",
       popular: false,
       badge: null,
       features: [
         "1 Peacock Lash Serum (5ml)",
-        "Guia de aplicação digital",
+        "Brinde Faixa Skincare GRÁTIS ",
+        "Guia de aplicação ",
         "Suporte via WhatsApp",
         "Garantia de 30 dias",
         "Frete grátis para todo Brasil"
       ],
       cta: "COMEÇAR AGORA",
-      savings: "Economize R$ 98,50"
+      savings: "Economize R$ 157,28"
     },
     {
       id: 2,
       name: "Plano Transformação",
       subtitle: "Mais vendido - Resultado garantido",
-      originalPrice: "R$ 394,00",
-      price: "R$ 167,30",
-      discount: "57%",
-      installments: "ou 6x de R$ 27,88",
+      originalPrice: "R$ 630,36",
+      price: "R$ 252,14",
+      installmentPrice: "26,27",
+      discount: "50%",
+      installments: "ou 12x de R$ 26,27",
       popular: true,
       badge: "MAIS VENDIDO",
       features: [
         "2 Peacock Lash Serum (5ml cada)",
-        "1 Primer Fortalecedor GRÁTIS",
+        "Brinde Faixa Skincare GRÁTIS",
         "Guia completo de cuidados",
         "Suporte prioritário 24/7",
         "Garantia estendida de 60 dias",
         "Frete grátis para todo Brasil",
-        "Kit de aplicação premium"
+        
       ],
       cta: "QUERO O MAIS VENDIDO",
-      savings: "Economize R$ 226,70"
+      savings: "Economize R$ 315,18"
     },
     {
       id: 3,
       name: "Plano Diva Premium",
       subtitle: "Transformação completa + bônus exclusivos",
-      originalPrice: "R$ 591,00",
-      price: "R$ 236,40",
-      discount: "60%",
-      installments: "ou 8x de R$ 29,55",
+      originalPrice: "R$ 757,92",
+      price: "R$ 378,96",
+      installmentPrice: "39,48",
+      discount: "50%",
+      installments: "ou 12x de R$ 39,48",
       popular: false,
       badge: "MÁXIMO DESCONTO",
       features: [
         "3 Peacock Lash Serum (5ml cada)",
-        "1 Primer Fortalecedor GRÁTIS",
-        "1 Máscara de Cílios Premium GRÁTIS",
-        "Curso online de maquiagem",
+        "Brinde Faixa Skincare GRÁTIS",
+        "1 Brinde surpresa GRÁTIS",
         "Consultoria personalizada",
         "Garantia vitalícia de 90 dias",
         "Frete grátis prioritário",
         "Kit completo de beleza",
-        "Grupo VIP no Telegram"
+        "Grupo VIP "
       ],
       cta: "VIRAR DIVA AGORA",
-      savings: "Economize R$ 354,60"
+      savings: "Economize R$ 378,96"
     }
   ];
 
@@ -91,8 +95,10 @@ const Pricing = () => {
     }
   ];
 
+
+
   return (
-    <section className="py-20 bg-gradient-to-br from-peacock-cream to-white">
+    <section id="pricing-section" className="py-20 bg-gradient-to-br from-peacock-cream to-white">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
@@ -149,8 +155,16 @@ const Pricing = () => {
                       -{pkg.discount}
                     </Badge>
                   </div>
-                  <div className="text-4xl font-bold gradient-text">{pkg.price}</div>
-                  <p className="text-sm text-peacock-dark/70">{pkg.installments}</p>
+                  
+                  {/* Destaque do parcelamento - valor grande */}
+                  <div className="text-center">
+                    <div className="flex items-baseline justify-center gap-1">
+                      <span className="text-2xl font-bold text-peacock-dark">12x</span>
+                      <span className="text-5xl font-bold gradient-text">R$ {pkg.installmentPrice}</span>
+                    </div>
+                    <p className="text-sm text-peacock-dark/60 mt-1">ou {pkg.price} à vista usando o cupom: PATROA20</p>
+                  </div>
+                  
                   <p className="text-sm font-semibold text-green-600">{pkg.savings}</p>
                 </div>
               </CardHeader>
@@ -169,6 +183,14 @@ const Pricing = () => {
                   variant={pkg.popular ? "cta" : "hero"} 
                   size="lg" 
                   className="w-full"
+                  onClick={() => {
+                    const links = {
+                      'COMEÇAR AGORA': 'https://seguro.peacockcosmeticos.com.br/r/8EW2RKYL5W',
+                      'QUERO O MAIS VENDIDO': 'https://seguro.peacockcosmeticos.com.br/r/J71882NMZB',
+                      'VIRAR DIVA AGORA': 'https://seguro.peacockcosmeticos.com.br/r/7GGF57BYHI'
+                    };
+                    window.location.href = links[pkg.cta];
+                  }}
                 >
                   {pkg.cta}
                 </Button>
@@ -211,9 +233,9 @@ const Pricing = () => {
           </p>
           
           <div className="space-y-4">
-            <Button variant="cta" size="xl" className="px-12">
-              🛒 APROVEITAR OFERTA AGORA - 60% OFF
-            </Button>
+            <Button variant="cta" size="xl" className="px-12" onClick={scrollToPricing}>
+                  🛒 APROVEITAR OFERTA AGORA - 60% OFF
+                </Button>
             
             <div className="flex items-center justify-center gap-6 text-sm text-peacock-dark/60">
               <span>✅ Garantia de 60 dias</span>

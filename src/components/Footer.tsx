@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Heart, Mail, Phone, MapPin, Instagram, Shield, Clock, CreditCard } from "lucide-react";
+import { scrollToPricing } from "@/lib/scroll";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -41,7 +42,7 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-peacock-coral" />
-                  <span>(11) 99999-9999</span>
+                  <span>(19) 98162-5626</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-peacock-coral" />
@@ -49,12 +50,19 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-peacock-coral" />
-                  <span>São Paulo - SP, Brasil</span>
+                  <span>R Benjamin Constant, 2158, Sala 2</span>
+              <span>Centro - Piracicaba - SP</span>
+              <span>CEP: 13.400-056</span>
                 </div>
-                <div className="flex items-center gap-3">
+                <a 
+                  href="https://instagram.com/peacockcosmetics" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 hover:text-peacock-coral transition-colors duration-300"
+                >
                   <Instagram className="w-5 h-5 text-peacock-coral" />
                   <span>@peacockcosmetics</span>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -120,9 +128,9 @@ const Footer = () => {
           <p className="text-white/80 mb-6 max-w-2xl mx-auto">
             Não perca mais tempo! Junte-se a mais de 50.000 mulheres que já descobriram o segredo dos cílios perfeitos.
           </p>
-          <Button variant="cta" size="lg" className="px-8">
-            GARANTIR MEUS CÍLIOS PERFEITOS
-          </Button>
+          <Button variant="cta" size="lg" className="px-8" onClick={scrollToPricing}>
+              GARANTIR MEUS CÍLIOS PERFEITOS
+            </Button>
         </div>
       </div>
 
@@ -133,7 +141,7 @@ const Footer = () => {
             <div className="text-white/60 text-sm text-center md:text-left">
               © {currentYear} Peacock Cosmetics. Todos os direitos reservados. 
               <span className="block md:inline md:ml-2">
-                CNPJ: 00.000.000/0001-00
+                CNPJ: 49.861.363/0001-00
               </span>
             </div>
             
